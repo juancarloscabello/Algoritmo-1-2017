@@ -1,0 +1,33 @@
+// area del triangulo.cpp : Defines the entry point for the console application.
+//
+//Autor : Juan carlos Cabello Hiza
+//fecha: 15/02/2017
+//DECLARAR LIBRERIAS
+#include "stdafx.h"  //libreria del visual c++ studio
+#include <iostream>  // entrada y salida cin, cout
+#include "conio.h" // para manejar la entrada y getch
+using namespace std; // declara el teclado y el monitor como salida y entrada el teclado
+
+void main()
+
+
+{
+	 float area,base,altura; 
+	 cout<<"ingrese base: ";// equivale a printf
+	 
+	 cin>>base; // equivale a scanf
+	 if (base>0){
+	  cout<<"ingrese altura: ";
+	 cin>>altura;
+	 if (altura>0){
+	 area=(base*altura)/2; // los operados validos  suma=+, resta= -, multi*
+	 cout<<"el area es: "<<area;
+	 }}
+	 else {
+		 cout<<"ingrese solo numeros mayor a cero" ;}
+
+	 getch();//detiene pantalla
+
+
+}
+
