@@ -1,0 +1,27 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+void main()
+{
+	int edad,genero,n;
+	cout<< "ingrese edad ";
+	cin>> edad;
+	cout<< "ingrese genero 1 para masculino, 0 para femenino ";
+	cin>> genero;
+	if(genero==1)
+		if(edad>=65)
+			cout<< "puede retirarse ";
+		else
+			cout<<" sigue trabajando ";
+	else
+		cout<< "cuantos hijos tiene ";
+	    cin>>n;
+		if(edad>=(60-n))
+			cout<<"se puede retirar ";
+		else
+			cout<<"sigue trabajando ";
+	getch();
+}
