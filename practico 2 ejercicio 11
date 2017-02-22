@@ -1,0 +1,45 @@
+// practico2.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+void main()
+{
+	float area,base,altura,lado,sali,radio;
+	int opcion;
+	cout<<"menu"<<endl;
+	cout<<"1.-area triangulo "<<endl;
+	cout<<"2.-area circulo "<<endl;
+	cout<<"3.-area cuadrado "<<endl;
+	cout<<"0.-salir "<<endl;
+	cout<<"ingrese opcion a escoger"<<endl;
+	cin>>opcion;
+	switch(opcion){
+	case 1: cout<< "ingrese base ";
+		    cin>>base;
+			cout<<"ingrese altura ";
+			cin>>altura;
+			area=(base*altura)/2;
+			cout<<"el area del triangulo es "<<area;
+			break;
+	case 2: cout<<"ingrese el radio";
+		    cin>>radio;
+			area=(3.1416*(radio*radio));
+			cout<<"el area del circulo "<<area;
+			break;
+	case 3: cout<<"ingrese lado ";
+		    cin>>lado;
+			area=(lado*lado);
+			cout<<"el area del cuadrado es "<<area;
+			break;
+	case 0: cout<<"salir ";
+		    break;
+	default: cout<<" opcion invalida ";
+		break;}
+
+	getch();
+}
