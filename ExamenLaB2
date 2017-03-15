@@ -1,0 +1,38 @@
+// Resolverexamen.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "math.h"
+
+
+using namespace std;
+void serie (float n, float x)
+void main(){
+	int x, n;
+	cout<<"ingrese n"<<endl;
+	cin>>n;
+	cout<<"ingrese x"<<endl;
+	cin>>x;
+	serie (x,n);
+	
+	getch ();
+}
+
+
+
+void serie (float n, float x){
+	float i ,operacion, suma=0;
+	if((n>0) && (x>0))
+	{
+	   for (i=0; i<=n; i++)
+	   {
+		   operacion=(1+(1/x));
+		   suma=suma+pow(operacion,i);
+	   }
+
+       cout<<"la suma es "<<suma;
+	}
+
+}
