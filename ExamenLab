@@ -1,0 +1,50 @@
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+
+using namespace std;
+int riesgo (int sueldo, int H, int m, int h);
+void main (){
+	int sueldo, H,h,m,p;
+	int alto,bajo, medio;
+
+	cout<<"introduzca sueldo"<<endl;
+	cin>> sueldo;
+	cout<<"Tiene Historial ? Si=1, No=0"<<endl;
+	cin>>H;
+	cout<<"Es moroso ? Si=1, No=0"<<endl;
+	cin>>m;
+	cout<<"Cuanto paga de hipoteca?"<<endl;
+	cin>>p;
+	
+	getch();
+
+}
+int Vriesgo (int sueldo,int H, int m, int h)
+{
+	int sueldo, H,h,m,p;
+	int alto,bajo, medio;
+
+	sueldo=sueldo*1;
+	alto=1;
+	medio=2;
+	bajo=3;
+	
+	if
+		(H==1);
+		(m==1);
+		((p*0.30)>sueldo);
+		cout<<"el nivel de riesgo es categoria: "<<"riesgo"<<alto;
+
+	if 
+		(H==0);
+		((p*0.20)<sueldo);
+			cout<<"el nivel de riesgo es categoria: "<<"riesgo"<<medio;
+			if
+				(H==1);
+				(m==0);
+				((p*0.30)<sueldo);
+				cout<<"el nivel de riesgo es categoria: "<<medio;
+}
