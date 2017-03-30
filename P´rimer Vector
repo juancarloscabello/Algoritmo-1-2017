@@ -1,0 +1,75 @@
+// 65786789yukgytj.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <iostream>
+#include "string"
+#include "conio.h"
+#define MAX 100
+using namespace std;
+
+void cargarvector(int notas[],int n);
+void cargarvector(string alumnos[], int n);
+void burbuja(int notas[],string alumnos[], int n);
+void mostrarvector(int notas[],string alumnos[],int n);
+
+void main()
+{
+	int n,notas[MAX];
+	string alumnos[MAX];
+	do{
+
+	cout<<"tamaño de vector"<<endl;
+	cin>>n;
+	}while ((n<=0) ||  (n>MAX) );
+	cargarvector(alumnos,n);
+	cargarvector(notas, n);
+	burbuja(notas,alumnos,n);
+	mostrarvector(notas,alumnos,n);
+	
+	getch();
+}
+void cargarvector(int notas[],int n)
+{
+	int i;
+	for(i=0;i<n;i++)
+	{
+		cout<<"notas["<<i<<"]:"<<endl;
+		cin>>notas[i];
+	}
+}
+void cargarvector(string alumnos[],int n)
+{
+	for(int i=0; i<n;i++)
+	{
+		cout<<"alumnos["<<i<<"]"<<endl;
+		getline(cin,alumnos[i]);
+	}
+}
+void burbuja(int notas[],string alumnos[], int n)
+{
+	//descendente de mayor a menor
+	int i,j,notasaux;
+	string alumnosaux;
+	for(i=0;i<n;i++){
+		for(j=1;j<n;j++){
+			if(notas[i]<notas[j])
+			{
+				notasaux=notas[j];
+				notas[j]=notas[i];
+				notas[i]=notasaux;
+				alumnosaux=alumnos[j];
+				alumnos[j]=alumnos[i];
+				alumnos[i]=alumnosaux;
+			}
+		}
+	}
+}
+
+void mostrarvector(int notas[],string alumnos[],int n)
+{
+	int i;
+	for (i=0;i<n;i++){
+		cout<<"nombre nota"<<endl;
+		cout<<alumnos[i]<<"\t"<<notas[i]<<endl;}
+}
