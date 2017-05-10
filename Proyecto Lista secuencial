@@ -1,0 +1,117 @@
+// proyecto.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "stdlib.h" 
+#include <string>
+#include <ctype.h>
+#include <conio.h>
+#include <string.h>
+#include <stdio.h>
+
+
+using namespace std;
+struct tipo_registro
+{
+int no_prod;
+char descripcion[50];
+int cantidad;
+float precio;
+};
+tipo_registro Registro;
+FILE*alias;
+void Alta_Secuencial(void);
+void Consulta_Secuencial(void);
+void Listado_secuencial(void);
+void Modificacion_Secuencial(void);
+void Baja_Logica_Secuencial(void);
+
+void main()
+{
+	int n,virgen,x;
+	float l,a,costo,producto;
+	string tierra,semilla,fertilizante;
+	system ("color 8F");
+	do{
+		cout<< "-----------Bienvenido a AgroPlant-----------" << endl;
+		cout<< "1.- Ingresar caracteristicas de la propiedad" << endl;
+		cout<< "2.- Calculo del tiempo de fertilidad de la tierra" << endl;
+		cout<< "3.- Calculo de la cantidad de producto a obtener" << endl;
+		cout<< "4.- Costo del tratamiento de la tierra infertil"<<endl;
+		cout<< "0.- Salir" << endl;
+		cout<< "Digite su opcion: ";
+		cin>> n;
+		switch (n){
+		case 1:{
+			cout<< "Dimensiones de la propiedad"<<endl;
+			cout<< "Ingrese el largo del terreno: "<<endl;
+			cin>> l;
+			cout<<"Ingrese el ancho del terreno: "<<endl;
+			cin>>a;
+			cout<< "Ingrese el tipo de tierra del terreno: " << endl;
+			cin.ignore();
+			getline(cin,tierra);
+			cout<<"Ingrese el tipo de semilla: "<<endl;
+			cin.ignore();
+			getline(cin,semilla);
+			   }break;
+		case 2:{
+			cout<< "Ingresar si la tierra es virgen (1) o no (0): ";
+			cin>>virgen;
+			if(virgen==0)
+			{
+				cout<<"Ingresar la cantidad de plantaciones anteriores en el terreno: "<<endl;
+				cin>>x;
+			}
+			   }break;
+		case 3:{
+			cout<<"La cantidad de producto que se puede obtener del terreno es: "<<producto<<endl;
+			   }break;
+		case 4:{
+			cout<< "Tipo de fertilizante a utilizar: "<<endl;
+			cin.ignore();
+			getline(cin,fertilizante);
+			cout<<"El costo de fertilizacion es: "<<costo<<endl; 			
+			   }break;
+		case 0:{
+			cout<< "Fin programa" << endl;   
+			   }break;
+		default:{
+			cout<< "Opcion invalida, digite otro numero" << endl;
+				}break;
+		}
+		system ("pause>null");  
+		system ("cls");	 
+	}while(n!=0);
+	getch();
+}
+
+void Listado_secuencial(void)
+{
+	cout<< "\n\rRegistro de Productos(Tipo de grano)"; 
+	alias=fopen("Producto.Sec","rb");
+
+	if(alias==NULL)
+	{
+		cout<< "\n\n\n\rNo existe (no se encuentra en el listado el tipo de grano ingresado)"; 
+		cout<< "\n\r<<< Oprima cualquier tecla para continuar >>>"; 
+		getch();
+		return;
+	}
+	cout <<"\n\rNo Tipo de Grano"; 
+	cout<< "\n\r----------------- ";
+	fread(&Registro,sizeof(Registro),1,alias);
+	while(!feof(alias))
+	{
+	printf("\n\r%3d",Registro.no_prod);
+	fread(&Registro,sizeof(Registro),1,alias);
+	}
+	fclose(alias);
+	cout<< "\n\r-------------";
+    cout << "\n\rFin del listado de Tipos de Granos ";
+    cout << "\n\r< Para continuar, oprima cualquier tecla, por favor >"; 
+	getch();
+	return;
+}
